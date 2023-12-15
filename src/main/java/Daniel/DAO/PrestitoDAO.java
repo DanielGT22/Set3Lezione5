@@ -1,4 +1,6 @@
 package Daniel.DAO;
 
-public class PrestitoDAO {
-}
+import javax.persistence.EntityManagerFactory;
+
+public class PrestitoDAO {}
+
