@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
-@Table(name = "Rivista")
 public class Rivista extends Catalogo{
 
     @Column(name = "Periodicità")
@@ -16,9 +15,9 @@ public class Rivista extends Catalogo{
     public Rivista() {
     }
 
-    public Rivista(String titolo, LocalDate anno_pubblicazione, int numero_pagine, Periodicità periodicita) {
+    public Rivista(String titolo, LocalDate anno_di_pubblicazione, int numero_pagine, Periodicità periodicita) {
         this.titolo = titolo;
-        this.anno_pubblicazione = anno_pubblicazione;
+        this.anno_di_pubblicazione = anno_di_pubblicazione;
         this.numero_pagine = numero_pagine;
         this.periodicita = periodicita;
 
@@ -37,7 +36,7 @@ public class Rivista extends Catalogo{
         return "Rivista{" +
                 "periodicita=" + periodicita +
                 ", titolo='" + titolo + '\'' +
-                ", anno_pubblicazione=" + anno_pubblicazione +
+                ", anno_di_pubblicazione=" + anno_di_pubblicazione +
                 ", numero_pagine=" + numero_pagine +
                 '}';
     }

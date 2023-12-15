@@ -9,9 +9,11 @@ import java.util.UUID;
 
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "tipo_prodotto")
+@NamedQuery(name = "findByYear", query = "SELECT c FROM Catalogo c WHERE c.anno_di_pubblicazione = :anno_di_pubblicazione")
+@NamedQuery(name = "findByISBN", query = "SELECT c FROM Catalogo c WHERE c.codice_isbn = :isbn")
+@NamedQuery(name = "findByName", query = "SELECT c FROM Catalogo c WHERE c.titolo = :titolo")
+@NamedQuery(name = "findByNameStartsWith", query = "SELECT c FROM Catalogo c WHERE LOWER(c.titolo) LIKE LOWER(CONCAT(:partialname, '%'))")
 
-@NamedQuery(name = "findByName", query = "SELECT a FROM Libro a WHERE a.name = :name")
-@NamedQuery(name = "findByNameStartsWith", query = "SELECT a FROM Libro a WHERE LOWER(a.name) LIKE LOWER(CONCAT(:partialname, '%'))")
 public abstract class Catalogo {
     @Id
     @GeneratedValue
@@ -20,15 +22,15 @@ public abstract class Catalogo {
     @Column(name = "Titolo")
     public String titolo;
 
-    @Column(name = "Anno di pubblicazione")
-    public LocalDate anno_pubblicazione;
+    @Column(name = "Anno_di_pubblicazione")
+    public LocalDate anno_di_pubblicazione;
 
-    @Column(name = "Numero Pagine")
+    @Column(name = "Numero_pagine")
     public int numero_pagine;
 
     public Catalogo(String titolo, LocalDate anno_pubblicazione, int numero_pagine) {
         this.titolo = titolo;
-        this.anno_pubblicazione = anno_pubblicazione;
+        this.anno_di_pubblicazione = anno_pubblicazione;
         this.numero_pagine = numero_pagine;
     }
 
@@ -49,11 +51,11 @@ public abstract class Catalogo {
     }
 
     public LocalDate getAnno_pubblicazione() {
-        return anno_pubblicazione;
+        return anno_di_pubblicazione;
     }
 
     public void setAnno_pubblicazione(LocalDate anno_pubblicazione) {
-        this.anno_pubblicazione = anno_pubblicazione;
+        this.anno_di_pubblicazione = anno_pubblicazione;
     }
 
     public int getNumero_pagine() {
@@ -69,7 +71,7 @@ public abstract class Catalogo {
         return "Catalogo{" +
                 "codice_isbn=" + codice_isbn +
                 ", titolo='" + titolo + '\'' +
-                ", anno_pubblicazione=" + anno_pubblicazione +
+                ", anno_pubblicazione=" + anno_di_pubblicazione +
                 ", numero_pagine=" + numero_pagine +
                 '}';
     }

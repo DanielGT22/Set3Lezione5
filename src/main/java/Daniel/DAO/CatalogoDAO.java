@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import java.time.LocalDate;
 import java.util.List;
 
 public class CatalogoDAO {
@@ -22,13 +23,30 @@ public class CatalogoDAO {
         return em.find(Catalogo.class, id);
     }
 
-    public Libro findCatById(long id) {
+    public Libro findLibroById(long id) {
         return em.find(Libro.class, id);
     }
 
-    public Rivista findDogById(long id) {
+    public Rivista findRivistaById(long id) {
         return em.find(Rivista.class, id);
     }
+    public Rivista findRivistaByTitolo(String titolo) {
+        return em.find(Rivista.class, titolo);
+    }
+    public Libro findLibroByTitolo(String titolo) {
+        return em.find(Libro.class, titolo);
+    }
+    public Libro findLibroByAnnoDiPubblicazione(LocalDate anno_di_pubblicazione) {
+        return em.find(Libro.class, anno_di_pubblicazione);
+    }
+    public Rivista findRivistaByAnnoDiPubblicazione(LocalDate anno_di_pubblicazione) {
+        return em.find(Rivista.class, anno_di_pubblicazione);
+    }
+    public Libro findLibroByAuttore(String auttore) {
+        return em.find(Libro.class, auttore);
+    }
+
+
 
     public void save(Catalogo catalogo) {
         EntityTransaction transaction = em.getTransaction();
@@ -38,54 +56,7 @@ public class CatalogoDAO {
         System.out.println("New entry saved");
     }
 
-    public void findByIdAndDelete(long id) {
-        Catalogo found = em.find(Catalogo.class, id);
 
-        if (found != null) {
-
-            EntityTransaction transaction = em.getTransaction();
-            transaction.begin();
-            em.remove(found);
-            transaction.commit();
-            System.out.println("Entry deleted");
-        } else {
-            System.err.println("Couldn't find entry with id (" + id + ") ");
-        }
-    }
-
-
-    public List<Catalogo> findByName(String name) {
-
-        TypedQuery<Catalogo> getAnimalsByName = em.createNamedQuery("findByName", Catalogo.class);
-        getAnimalsByName.setParameter("name", name);
-        return getAnimalsByName.getResultList();
-    }
-
-    public List<Catalogo> findByNameStartsWith(String partialName) {
-        TypedQuery<Catalogo> getCatalogoByName = em.createNamedQuery("findByNameStartsWith", Catalogo.class);
-        getCatalogoByName.setParameter("partialname", partialName);
-        return getCatalogoByName.getResultList();
-    }
-
-    public List<Catalogo> findAllCatalogo() {
-        TypedQuery<Catalogo> getAllQuery = em.createQuery("SELECT c FROM Catalogo c", Catalogo.class);
-        return getAllQuery.getResultList();
-    }
-
-    public List<Libro> findAllLibri() {
-        TypedQuery<Libro> getAllQuery = em.createQuery("SELECT l FROM Libro l", Libro.class);
-        return getAllQuery.getResultList();
-    }
-
-    public List<Rivista> findAllRivista() {
-        TypedQuery<Rivista> getAllQuery = em.createQuery("SELECT r FROM Rivista r", Rivista.class);
-        return getAllQuery.getResultList();
-    }
-
-    public List<String> findAllAnimalsNames() {
-        TypedQuery<String> getAllQuery = em.createQuery("SELECT a.name FROM Animal a", String.class);
-        return getAllQuery.getResultList();
-    }
 
 
 

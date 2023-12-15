@@ -17,7 +17,7 @@ public class Utente {
     @Column(name = "Cognome")
     private String cognome;
 
-    @Column(name = "data di nascita")
+    @Column(name = "data_di_nascita")
     private LocalDate data_di_nascita;
 
 

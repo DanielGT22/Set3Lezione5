@@ -19,9 +19,9 @@ public class Libro  extends Catalogo{
     public Libro() {
     }
 
-    public Libro(String titolo, LocalDate anno_pubblicazione, int numero_pagine, String autore, Genere genere) {
+    public Libro(String titolo, LocalDate anno_di_pubblicazione, int numero_pagine, String autore, Genere genere) {
        this.titolo = titolo;
-       this.anno_pubblicazione = anno_pubblicazione;
+       this.anno_di_pubblicazione = anno_di_pubblicazione;
        this.numero_pagine = numero_pagine;
         this.autore = autore;
         this.genere = genere;
@@ -43,14 +43,17 @@ public class Libro  extends Catalogo{
         this.genere = genere;
     }
 
+
+
     @Override
     public String toString() {
         return "Libro{" +
                 "autore='" + autore + '\'' +
                 ", genere=" + genere +
                 ", titolo='" + titolo + '\'' +
-                ", anno_pubblicazione=" + anno_pubblicazione +
+                ", anno_di_pubblicazione=" + anno_di_pubblicazione +
                 ", numero_pagine=" + numero_pagine +
                 '}';
     }
+
 }
