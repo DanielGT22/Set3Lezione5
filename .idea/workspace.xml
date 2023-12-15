@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39141507-87ff-4b4e-a27a-c4a0d74c6059" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Daniel/Entities/Genere.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Daniel/Entities/Periodicità.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Daniel/DAO/CatalogoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Daniel/Entities/Catalogo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Relations.png" beforeDir="false" afterPath="$PROJECT_DIR$/Relations.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Daniel/DAO/LibroDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Daniel/DAO/RivisteDAO.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Daniel/Entities/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Daniel/Entities/Libro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Daniel/Entities/Prestito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Daniel/Entities/Prestito.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Daniel/Entities/Rivista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Daniel/Entities/Rivista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Daniel/Entities/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Daniel/Entities/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,17 +23,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2ZZaXsCNzu61s7rXDAZUgn3gYQN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -39,14 +42,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="set3l5" />

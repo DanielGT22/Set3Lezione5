@@ -6,20 +6,8 @@ import java.util.UUID;
 
 @Entity
 @Table ( name = "Libro")
-public class Libro {
+public class Libro  extends Catalogo{
 
-    @Id
-    @GeneratedValue
-    private UUID codice_isbn;
-
-    @Column(name = "Titolo")
-    private String titolo;
-
-    @Column(name = "Anno di pubblicazione")
-    private LocalDate anno_pubblicazione;
-
-    @Column(name = "Numero Pagine")
-    private int numero_pagine;
 
     @Column(name = "Autore")
     private String autore;
@@ -32,40 +20,11 @@ public class Libro {
     }
 
     public Libro(String titolo, LocalDate anno_pubblicazione, int numero_pagine, String autore, Genere genere) {
-        this.titolo = titolo;
-        this.anno_pubblicazione = anno_pubblicazione;
-        this.numero_pagine = numero_pagine;
+       this.titolo = titolo;
+       this.anno_pubblicazione = anno_pubblicazione;
+       this.numero_pagine = numero_pagine;
         this.autore = autore;
         this.genere = genere;
-    }
-
-    public UUID getCodice_isbn() {
-        return codice_isbn;
-    }
-
-
-    public String getTitolo() {
-        return titolo;
-    }
-
-    public void setTitolo(String titolo) {
-        this.titolo = titolo;
-    }
-
-    public LocalDate getAnno_pubblicazione() {
-        return anno_pubblicazione;
-    }
-
-    public void setAnno_pubblicazione(LocalDate anno_pubblicazione) {
-        this.anno_pubblicazione = anno_pubblicazione;
-    }
-
-    public int getNumero_pagine() {
-        return numero_pagine;
-    }
-
-    public void setNumero_pagine(int numero_pagine) {
-        this.numero_pagine = numero_pagine;
     }
 
     public String getAutore() {
@@ -87,12 +46,11 @@ public class Libro {
     @Override
     public String toString() {
         return "Libro{" +
-                "codice_isbn=" + codice_isbn +
+                "autore='" + autore + '\'' +
+                ", genere=" + genere +
                 ", titolo='" + titolo + '\'' +
                 ", anno_pubblicazione=" + anno_pubblicazione +
                 ", numero_pagine=" + numero_pagine +
-                ", autore='" + autore + '\'' +
-                ", genere=" + genere +
                 '}';
     }
 }
